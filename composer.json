@@ -1,0 +1,24 @@
+{
+    "name": "monogo/recruitment",
+    "description": "Monogo recruitment task",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Michał Pawlak",
+            "email": "pawlakmich@wp.pl"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Monogo\\Recruitment\\": ""
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "*"
+    }
+}
