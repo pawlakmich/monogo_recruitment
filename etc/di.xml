@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Monogo\Recruitment\Api\ConfigurationReaderInterface"
+                type="Monogo\Recruitment\Service\ConfigurationReader"/>
+    <preference for="Monogo\Recruitment\Api\QrApiRequestInterface"
+                type="Monogo\Recruitment\Service\QrApiRequest"/>
+    <preference for="Monogo\Recruitment\Api\Consumer\MessageInterface"
+                type="Monogo\Recruitment\Model\Consumer\Message"/>
+    <preference for="Monogo\Recruitment\Api\ConsumerInterface"
+                type="Monogo\Recruitment\Model\Consumer"/>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="monogo:productsnames:assign" xsi:type="object">
+                    Monogo\Recruitment\Console\Command\AssignProductsNamesToAttribute
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="add_products_names_field_product_api" type="Monogo\Recruitment\Plugin\ProductsNamesAssign"/>
+    </type>
+</config>

@@ -1,0 +1,12 @@
+<?php
+/**@var Monogo\Recruitment\ViewModel\QrCode $viewModel */
+/**@var Magento\Framework\View\Element\Template $block */
+$viewModel = $block->getData('view_model');
+?>
+
+<?php if ($viewModel->getQrCode()): ?>
+    <div>
+        <img
+            src="data:image/jpeg;base64, <?= $viewModel->getQrCode() ?>" alt="qr_code"/>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
+    <publisher topic="products.assign.db">
+        <connection name="db" exchange="monogo.api" />
+    </publisher>
+</config>
